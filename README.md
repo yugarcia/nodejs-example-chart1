@@ -1,9 +1,11 @@
 # nodejs-example-chart
 
-### Paso pre-instalacion
-```Bash
-kubectl apply -f ./template/secret.yaml -n helm-chart
+### Clonar el repo y posicionarse en la carpeta del cahrt.
+```bash
+git clone https://https://github.com/edgaregonzalez/nodejs-example-chart.git
+cd nodejs-example-chart/helm-chart
 ```
+
 ### instalar una aplicacion
 
 ```bash
@@ -15,6 +17,7 @@ helm install nodejs-example-chart . -f values.yaml  --debug -n helm-chart
 ```Bash
 helm install nodejs-example-chart . -f values.yaml  --debug -n helm-chart
 ```
+
 ```Bash
 helm install nodejs-example-chart . -f values.yaml  --debug -n helm-chart --dry-run
 ```
