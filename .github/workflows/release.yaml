@@ -19,14 +19,14 @@ jobs:
     - name: Configure Git
       run: |
         git config user.name "$GITHUB_ACTOR"
-        git config user.email "edgaregonzalez@gmail.com"
+        git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
     - name: Install Helm
-      uses: azure/setup-helm@v3
+      uses: azure/setup-helm@v1
+      with:
+        version: v3.8.1
 
     - name: Publish Helm Chart
-      uses: helm/chart-releaser-action@v1.5.0
-      with:
-        charts_dir: ./helm-charts
+      uses:  askcloudarchitech/chart-releaser-action@skip-packaging-option
       env:
         CR_TOKEN: ${{ secrets.TOKEN }}
