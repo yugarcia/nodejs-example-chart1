@@ -1,0 +1,24 @@
+name: Package and Publish Helm Chart
+
+on:
+  push:
+    branches:
+      - master  # Cambia esto al nombre de tu rama principal
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Package Helm Chart
+      run: |
+        helm package ./charts
+      working-directory: ./helm-charts
+
+    - name: Publish Helm Chart
+      uses: helm/chart-releaser-action@v1.5.0
+      env:
+        CR_TOKEN: ${{ secrets.TOKEN }}
