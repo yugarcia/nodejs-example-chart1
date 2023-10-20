@@ -16,6 +16,8 @@ jobs:
     - name: Package Helm Chart
       run: |
         helm package ./helm-charts
+        helm repo index --url https://edgaregonzalez.github.io/nodejs-example-chart/ .
+      working-directory: ./nodejs-example-chart/helm-charts
 
     - name: Publish Helm Chart
       uses: helm/chart-releaser-action@v1.5.0
