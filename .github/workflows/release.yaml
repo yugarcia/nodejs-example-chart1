@@ -16,7 +16,8 @@ jobs:
     - name: Package Helm Chart
       run: |
         cd helm-charts
-        helm package . --destination ../charts
+        helm lint .
+        helm package .
 
     - name: Publish Helm Chart
       uses: helm/chart-releaser-action@v1.5.0
