@@ -15,7 +15,7 @@ jobs:
 
     - name: Package Helm Chart
       run: |
-        helm package ./charts
+        helm package ./helm-charts
       working-directory: ./helm-charts
 
     - name: Publish Helm Chart
