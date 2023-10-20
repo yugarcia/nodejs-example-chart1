@@ -11,6 +11,10 @@ cd nodejs-example-chart/helm-chart
 ```bash
 helm install nodejs-example-chart . -f values.yaml  --debug -n helm-chart
 ```
+.: directorio actual
+f: archivo de valores
+--debug: para hacer debug
+-n: namespace
 
 ### para hacer debug
 
